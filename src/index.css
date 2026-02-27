@@ -179,136 +179,67 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Donation Cards */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.cards-grid {
+/* Donation Info Minimalist */
+.info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2rem;
+  gap: 4rem;
   margin-bottom: 4rem;
 }
 
-.donation-card {
-  background: var(--light-navy);
-  padding: 3rem;
-  border-radius: 12px;
-  position: relative;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
+.info-column {
+  padding: 1rem;
 }
 
-.donation-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
-}
-
-.donation-card.premium {
-  border: 1px solid var(--accent-gold);
-  background: linear-gradient(135deg, var(--light-navy) 0%, #1a2a4a 100%);
-}
-
-.premium-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--accent-gold);
-  color: var(--dark-navy);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.tier-title {
+  font-size: 1.8rem;
   margin-bottom: 2rem;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.card-icon {
-  width: 48px;
-  height: 48px;
-  color: var(--primary-blue);
-}
-
-.card-icon.gold {
+.tier-title.gold {
   color: var(--accent-gold);
 }
 
-.card-price {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--text-primary);
-}
-
-.card-price.gold {
-  color: var(--accent-gold);
-}
-
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.card-perks {
+.tier-list {
   list-style: none;
-  margin-bottom: 3rem;
-  flex-grow: 1;
 }
 
-.card-perks li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.tier-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.perk-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 1rem;
-  flex-shrink: 0;
+.tier-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
   color: var(--primary-blue);
+  font-weight: bold;
 }
 
-.perk-icon.gold {
+.premium-text .tier-list li::before {
   color: var(--accent-gold);
 }
 
-.card-btn {
-  display: block;
+.free-donation-text {
   text-align: center;
-  padding: 1.25rem;
-  background: var(--lightest-navy);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  padding: 2rem;
+  border-top: 1px solid var(--light-navy);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.free-donation-text strong {
   color: var(--primary-blue);
-  border: 1px solid var(--primary-blue);
-  border-radius: 4px;
-  font-weight: 700;
-  transition: var(--transition);
-}
-
-.card-btn:hover {
-  background: var(--primary-blue-glow);
-}
-
-.premium-btn {
-  background: var(--accent-gold);
-  color: var(--dark-navy);
-  border-color: var(--accent-gold);
-}
-
-.premium-btn:hover {
-  background: #b8952e;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px -10px var(--accent-gold);
 }
 
 /* Payment Section */
@@ -444,4 +375,43 @@ a {
   font-size: 0.8rem;
   color: var(--primary-blue);
   opacity: 0.7;
+}
+
+.app-content {
+  background-image:
+    linear-gradient(rgba(2, 12, 27, 0.75), rgba(2, 12, 27, 0.85)),
+    url("/falcon_bg_new.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  transition: opacity 1s ease;
+}
+
+.app-content.hidden {
+  opacity: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-content.visible {
+  opacity: 1;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightest-navy);
+  border-radius: 10px;
+  border: 3px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
 }

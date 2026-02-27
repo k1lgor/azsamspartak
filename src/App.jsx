@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
-import DonationCards from "./components/DonationCards";
+import DonationInfo from "./components/DonationInfo";
 import PaymentSection from "./components/PaymentSection";
+import LoadingScreen from "./components/LoadingScreen";
 
 function App() {
-  return (
-    <main className="app-content">
-      <Hero />
-      <DonationCards />
-      <PaymentSection />
+  const [isLoading, setIsLoading] = useState(true);
 
-      <footer className="footer">
-        <div className="container">
-          <p>© 2026 ФК Спартак Варна. Всички права запазени.</p>
-          <p className="dev-challenge">
-            Built for the DEV Weekend Challenge #Community
-          </p>
-        </div>
-      </footer>
-    </main>
+  return (
+    <>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+
+      <main className={`app-content ${isLoading ? "hidden" : "visible"}`}>
+        <Hero />
+        <DonationInfo />
+        <PaymentSection />
+
+        <footer className="footer">
+          <div className="container">
+            <p>© 2026 Спартачко. Всички права запазени.</p>
+            <p className="dev-challenge">Semper 1918 Fidelis</p>
+          </div>
+        </footer>
+      </main>
+    </>
   );
 }
 

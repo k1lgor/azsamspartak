@@ -67,14 +67,15 @@
 }
 
 /* Variant B: Pulse */
-.variant-B .loading-logo {
-  animation: heartbeat 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+.variant-B .pulse-text {
+  animation: heartbeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .variant-B .pulse-text span {
   opacity: 0;
   display: inline-block;
   transform: translateY(10px);
+  margin: 0 5px;
 }
 
 .variant-B .pulse-text span.visible {

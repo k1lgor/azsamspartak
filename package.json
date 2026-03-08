@@ -1,8 +1,8 @@
 {
   "name": "sparta4ko",
   "private": true,
-  "version": "1.0.0",
-  "description": "Официална кампания за набиране на средства за ФК Спартак Варна. Аз съм Спартак!",
+  "version": "1.0.1",
+  "description": "Fundraising campaign for FC Spartak Varna. I am Spartak!",
   "type": "module",
   "scripts": {
     "dev": "vite",

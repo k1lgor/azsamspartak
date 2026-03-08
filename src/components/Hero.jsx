@@ -1,5 +1,4 @@
 import React from "react";
-import { ShieldCheck, Heart, Users } from "lucide-react";
 
 const Hero = () => {
   return (

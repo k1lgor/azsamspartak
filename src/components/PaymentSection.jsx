@@ -6,7 +6,7 @@ const PaymentSection = () => {
   const iban = "BG55BGUS91601013246000";
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(iban);
+    navigator.clipboard.writeText(iban).catch(() => {});
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -17,10 +17,10 @@ const PaymentSection = () => {
         <div className="payment-grid">
           <div className="bank-details">
             <h2 className="section-title left">Банкови Детайли</h2>
-            <div className="iban-box" onClick={copyToClipboard}>
+            <div className="iban-box">
               <div className="iban-label">IBAN:</div>
               <div className="iban-value">{iban}</div>
-              <button className="copy-btn">
+              <button className="copy-btn" onClick={copyToClipboard} aria-label="Копирай IBAN">
                 {copied ? <Check size={20} /> : <Copy size={20} />}
               </button>
             </div>
@@ -44,7 +44,7 @@ const PaymentSection = () => {
             <h2 className="section-title left">Дарение в брой</h2>
             <div className="store-info">
               <div className="info-item">
-                <Store className="info-icon" />
+                <Store className="info-icon" aria-hidden="true" />
                 <div>
                   <p>
                     <strong>Фен Магазин</strong>
@@ -53,7 +53,7 @@ const PaymentSection = () => {
                 </div>
               </div>
               <div className="info-item">
-                <Clock className="info-icon" />
+                <Clock className="info-icon" aria-hidden="true" />
                 <div>
                   <p>
                     <strong>Работно време</strong>
@@ -62,7 +62,7 @@ const PaymentSection = () => {
                 </div>
               </div>
               <div className="info-item">
-                <MapPin className="info-icon" />
+                <MapPin className="info-icon" aria-hidden="true" />
                 <div>
                   <p>
                     <strong>Адрес</strong>

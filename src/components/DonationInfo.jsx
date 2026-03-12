@@ -2,12 +2,26 @@ import React from "react";
 
 const DonationInfo = () => {
   return (
-    <section id="donate" className="section donation-info">
+    <section
+      id="donate"
+      className="section donation-info"
+      aria-labelledby="donation-title"
+    >
       <div className="container">
+        <header className="section-header">
+          <h2 id="donation-title" className="section-title">
+            Дарителски пакети и възможности за подкрепа
+          </h2>
+          <p className="section-intro">
+            Изберете най-подходящия начин да подкрепите ФК Спартак Варна. Всеки
+            принос към кампанията „Аз съм Спартак“ подпомага устойчивото
+            развитие на клуба и изгражда по-силна общност около него.
+          </p>
+        </header>
+
         <div className="info-grid">
-          {/* Standard Tier */}
           <div className="info-column">
-            <h2 className="tier-title">🔹 Дарителска карта – €200</h2>
+            <h3 className="tier-title">🔹 Дарителска карта – €200</h3>
             <ul className="tier-list">
               <li>Персонална карта „Аз съм Спартак“</li>
               <li>Удостоверение и сертификат за дарение</li>
@@ -15,11 +29,10 @@ const DonationInfo = () => {
             </ul>
           </div>
 
-          {/* Premium Tier */}
           <div className="info-column premium-text">
-            <h2 className="tier-title gold">
+            <h3 className="tier-title gold">
               🔹 Премиум дарителска карта – €500
-            </h2>
+            </h3>
             <ul className="tier-list">
               <li>Персонална карта „Аз съм Спартак“</li>
               <li>Удостоверение и сертификат за дарение</li>
@@ -39,7 +52,9 @@ const DonationInfo = () => {
           <p>
             Отваряме и възможност за <strong>свободно дарение</strong> в размер
             по избор. Всеки дарител със свободно дарение също ще получи
-            удостоверение и ще бъде вписан на Стената на дарителите.
+            удостоверение и ще бъде вписан на Стената на дарителите. Така можете
+            да подкрепите кампанията с удобна за вас сума и да останете част от
+            общността зад ФК Спартак Варна.
           </p>
         </div>
       </div>

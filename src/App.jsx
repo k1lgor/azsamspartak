@@ -11,20 +11,23 @@ function App() {
 
   return (
     <>
-      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
-
-      <main className={`app-content ${isLoading ? "hidden" : "visible"}`}>
+      <main id="main-content" className="app-content" aria-busy={isLoading}>
         <Hero />
         <DonationInfo />
         <PaymentSection />
 
         <footer className="footer">
           <div className="container">
-            <p>© {new Date().getFullYear()} Спартачко. Всички права запазени.</p>
+            <p>
+              © {new Date().getFullYear()} Кампания „Аз съм Спартак“ · ФК
+              Спартак Варна
+            </p>
             <p className="dev-challenge">Semper 1918 Fidelis</p>
           </div>
         </footer>
       </main>
+
+      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
     </>
   );
 }

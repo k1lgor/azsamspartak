@@ -15,7 +15,7 @@ const LoadingScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="loading-container variant-B">
+    <div className="loading-container variant-B" aria-hidden="true">
       <div className="loading-content">
         <div className="loading-text pulse-text">
           <span className={stage >= 1 ? "visible" : ""}>Аз... </span>

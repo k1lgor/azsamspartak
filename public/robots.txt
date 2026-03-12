@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azsamspartak.fan/sitemap.xml

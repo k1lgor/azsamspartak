@@ -34,6 +34,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -48,6 +63,10 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
+}
+
+address {
+  font-style: normal;
 }
 
 .container {
@@ -70,7 +89,6 @@ a {
   }
 }
 
-/* Hero Section */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -120,7 +138,25 @@ a {
   margin-bottom: 2.5rem;
 }
 
-/* Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-highlights {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 720px;
+  padding-left: 1.25rem;
+  color: var(--text-primary);
+}
+
+.hero-highlights li::marker {
+  color: var(--primary-blue);
+}
+
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
@@ -144,7 +180,6 @@ a {
 .btn-outline {
   border: 1px solid var(--primary-blue);
   color: var(--primary-blue);
-  margin-left: 1rem;
 }
 
 .btn-outline:hover {
@@ -152,7 +187,6 @@ a {
   transform: translateY(-3px);
 }
 
-/* Features Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -179,7 +213,23 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Donation Info Minimalist */
+.section-header {
+  max-width: 780px;
+  margin: 0 auto 3rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -242,17 +292,10 @@ a {
   color: var(--primary-blue);
 }
 
-/* Payment Section */
 .payment-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-}
-
-@media (max-width: 768px) {
-  .payment-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .section-title.left {
@@ -302,10 +345,23 @@ a {
   align-items: center;
 }
 
-.instructions h3 {
-  font-size: 1.25rem;
+.copy-error {
+  margin-bottom: 1rem;
+  color: #ff9b9b;
+}
+
+.instructions h3,
+.instructions h4 {
   margin: 1.5rem 0 1rem;
   color: var(--text-primary);
+}
+
+.instructions h3 {
+  font-size: 1.25rem;
+}
+
+.instructions h4 {
+  font-size: 1.1rem;
 }
 
 .instructions ul {
@@ -343,7 +399,6 @@ a {
   flex-shrink: 0;
 }
 
-/* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -362,7 +417,6 @@ a {
   background: var(--text-secondary);
 }
 
-/* Footer */
 .footer {
   padding: 4rem 0;
   text-align: center;
@@ -384,34 +438,19 @@ a {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  transition: opacity 1s ease;
 }
 
-.app-content.hidden {
-  opacity: 0;
-  height: 100vh;
-  overflow: hidden;
-}
+@media (max-width: 768px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
 
-.app-content.visible {
-  opacity: 1;
-}
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-/* Scrollbar Styles */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--lightest-navy);
-  border-radius: 10px;
-  border: 3px solid var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  .section {
+    padding: 80px 0;
+  }
 }
